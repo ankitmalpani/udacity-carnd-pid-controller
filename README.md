@@ -16,7 +16,8 @@ Such a steering angle defined as:
 double steer_value = -Cp * cte; //constant Cp and Cross Track Error cte
 ```
 
-As intuitive as this approach seems, the vehicle with this approach doesn't quite converge to the reference line . In theory, it oscillates a good amount - as seen here, it actually gets off track: `Calculated here with a constant of .25`
+As intuitive as this approach seems, the vehicle with this approach doesn't quite converge to the reference line . In theory, it oscillates a good amount - as seen here, it actually gets off track:
+`Calculated here with a constant of .25 (Manually chosen)`
 
 [P controller video](./videos/P_controller.mp4)
 
@@ -30,7 +31,7 @@ Such a steering angle is defined as:
 double diff_cte = cte - last_cte; //differential as a diff from previous
 double steer_value = -Cp * cte  - Cd * diff_cte; //new differential term with constant Cd
 ```
-This makes a slight improvement to the control of the car. Still seems unstable but makes a lap around the track `Calculated with Cp as .25 and Cd as 3`
+This makes a slight improvement to the control of the car. Still seems unstable but makes a lap around the track `Calculated with Cp as .25 and Cd as 3 (Manually chosen after a few iterations)`
 
 [PD controller video](./videos/PD_controller.mp4)
 
@@ -44,7 +45,7 @@ double diff_cte = cte - last_cte; //differential as diff from previous
 double steer_value = -Cp * cte - Kd * diff_cte - Ci * int_cte; //new integral term with constant Ci
 ```
 
-`Calculated with Cp as .3158, Cd as 3.5467 and Ci as 0 (no systemic bias) - Look at twiddling below`
+`Calculated with Cp as .3158, Cd as 3.5467 and Ci as 0 (no systemic bias) - manual fine tuning and twiddling (Look at twiddling below)`
 
 [Final PID controller with params from twiddling](./videos/PID_controller.mp4)
 
