@@ -18,7 +18,7 @@ double steer_value = -Cp * cte; //constant Cp and Cross Track Error cte
 
 As intuitive as this approach seems, the vehicle with this approach doesn't quite converge to the reference line . In theory, it oscillates a good amount - as seen here, it actually gets off track: (Calculated here with a constant of .25)
 
-[P controller](./videos/P_controller.mp4)
+[P controller video](./videos/P_controller.mp4)
 
 
 # Understanding a PD controller
@@ -32,7 +32,7 @@ double steer_value = -Cp * cte  - Cd * diff_cte; //new differential term with co
 ```
 This makes a slight improvement to the control of the car. Still seems unstable but makes a lap around the track (Calculated with Cp as .25 and Cd as 3)
 
-[PD controller](./videos/PD_controller.mp4)
+[PD controller video](./videos/PD_controller.mp4)
 
 # Understanding a PID controller
 Now, adding an integral term to our compute above helps to account for a vehicle's systematic bias, eg: natural steering angle always is a few degrees off from the center. This is important since, PD controller cannot handle such a situation and will lead to a vehicle that never converges to the reference line.
@@ -46,7 +46,7 @@ double steer_value = -Cp * cte - Kd * diff_cte - Ci * int_cte; //new integral te
 
 `Calculated with Cp as .3158, Cd as 3.5467 and Ci as 0 (no systemic bias) - Look at twiddling below`
 
-[Final PID controller](./videos/PID_controller.mp4)
+[Final PID controller with params from twiddling](./videos/PID_controller.mp4)
 
 ## Project, Challenge and Twiddling
 
