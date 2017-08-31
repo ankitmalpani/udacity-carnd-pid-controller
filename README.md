@@ -56,12 +56,6 @@ Even though I conceptually understood the PID controller and twiddling process a
 I think I could've first tried to implement smaller pieces as done in the chapter. The P controller first, PD next and so on. I made many mistakes while trying to implement the whole PID controller along with the twiddling algorithm. This took me much longer to finish the project. This becomes an important point since, we realize that there is no systemic bias in the simulator, so PD controller really gets you across the track.
 Also, I could have tweaked some parameter manually to get the car to finish 1 lap and then see the effect of twiddle.
 
-### Final parameters + video
-
-
-
-
-
 ## Dependencies
 
 * cmake >= 3.5
